@@ -21,10 +21,12 @@ fetch('https://dummyjson.com/products')
       img.setAttribute('src', data.thumbnail);
       img.setAttribute('alt', `Image of product`);
       img.style.objectFit = 'cover';
-      img.style.height = '150px';
+      img.style.height = '180px';
 
       const bodyProductCard = document.createElement('div');
       bodyProductCard.classList.add('card-body');
+      bodyProductCard.classList.add('d-flex');
+      bodyProductCard.classList.add('flex-column');
 
       const title = document.createElement('h4');
       title.classList.add('card-title');
@@ -32,6 +34,7 @@ fetch('https://dummyjson.com/products')
 
       const description = document.createElement('p');
       description.classList.add('card-text');
+      description.classList.add('flex-fill'); 
       description.textContent = `${data.description}`;
 
       const footerProductCard = document.createElement('div');
@@ -46,14 +49,14 @@ fetch('https://dummyjson.com/products')
       rating.textContent = `Rating : ${data.rating}`;
 
       bodyProductCard.append(title);
-      bodyProductCard.append(description); 
+      bodyProductCard.append(description);
+      bodyProductCard.append(footerProductCard);  
       
       footerProductCard.append(price);
       footerProductCard.append(rating);
 
       productCard.append(img);
-      productCard.append(bodyProductCard);
-      productCard.append(footerProductCard); 
+      productCard.append(bodyProductCard); 
 
       cardContainer.append(productCard);
 
