@@ -14,10 +14,23 @@
   <script defer src="index.js"></script>
 </head>
 <body>
+  <div class="header">
+    <span class="logo">Our Shop</span>
+
+    <form>
+      <button class="buttonCart"></button>
+      <input class="holder" type="search" name="q" placeholder="Search"> 
+      <input class="buttonSearch" type="button" value="Search" onclick="findItems(this)">
+    </form>
+  </div>
+
   <div class="container">
     <h1 class="title">Our Products</h1>
+    <div class="wrapper row justify-content-center"></div>
 
-    <div class="wrapper row justify-content-center">
+    <div class="shoppingCart">
+      <h2>Your order</h2>
+      <div class="closeModal"></div>
     </div>
   </div>
 </body>
